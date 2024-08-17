@@ -1,7 +1,13 @@
+import "./CardWidget.css"
+
 const CardWidget = () => {
     return(
         <>
-            <span>0</span>            
+            <div className="carrito">
+            <i className="bi bi-cart carrito-icon">
+                <span className="carrito-numero">0</span>
+            </i>    
+            </div>        
         </>
     )
 }
