@@ -1,7 +1,7 @@
 const CardWidget = () => {
     return(
         <>
-            <span>2</span>            
+            <span>0</span>            
         </>
     )
 }

@@ -1,0 +1,20 @@
+.portada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   max-height: 90vh;
+   overflow: hidden;
+    .portada-contenedor {
+       
+
+        .portada-imagen {
+           
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+}
+

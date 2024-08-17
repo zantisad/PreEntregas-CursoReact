@@ -9,7 +9,54 @@
     background-color: black;
 }
 
-ul {
+.navbar a {
+    color: white;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: cen;
+}
+
+.active {
+    font-weight: bolder;
+    color: red !important
+}
+
+.logo p {
+    font-size: 1.3rem;
+}
+
+.navbar ul {
     display: flex;
     gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+ul a:hover {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.dropBrands {
+    cursor: pointer;
+}
+
+.dropBrands:hover {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.botonBrands {
+    padding: 0 1rem;
+    background-color: transparent;
+    border: none;
+}
+.botonBrands:hover {
+    text-decoration: underline;
+    background-color: transparent;
+    
 }

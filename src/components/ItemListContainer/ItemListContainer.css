@@ -1,4 +1,18 @@
-.greeting {
+.boton {
     padding: 1rem;
-    font-size: 2rem;
+    width: 5rem;
+    height: 2rem;
+    background-color: white;
+    
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    justify-content: center;
+}
+
+.amarillo {
+    background-color: yellow;
 }
