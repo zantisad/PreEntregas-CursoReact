@@ -178,5 +178,50 @@
         "stock": 18,
         "descripcion": "Hoka Bondi 8, con una amortiguación excepcional y un diseño ligero para un confort duradero.",
         "categoria": "hoka"
+    },
+    {
+        "id": 21,
+        "nombre": "Air Jordan 4 Retro",
+        "precio": 220.00,
+        "img": "/media/air jordan 4.jpg",
+        "stock": 10,
+        "descripcion": "Las Air Jordan 4 Retro combinan la herencia de las Jordan con un diseño robusto y detalles modernos.",
+        "categoria": "nike"
+    },
+    {
+        "id": 22,
+        "nombre": "Air Jordan 5 Retro",
+        "precio": 230.00,
+        "img": "/media/jordan 5.webp",
+        "stock": 12,
+        "descripcion": "Las Air Jordan 5 Retro presentan un diseño audaz con una lengüeta reflectante y una excelente amortiguación.",
+        "categoria": "nike"
+    },
+    {
+        "id": 23,
+        "nombre": "Air Jordan 6 Retro",
+        "precio": 240.00,
+        "img": "/media/jordan6.jpeg",
+        "stock": 15,
+        "descripcion": "Las Air Jordan 6 Retro destacan por su estilo clásico, con detalles perforados y una estructura de soporte superior.",
+        "categoria": "nike"
+    },
+    {
+        "id": 24,
+        "nombre": "Air Jordan 11 Retro",
+        "precio": 250.00,
+        "img": "/media/jordan11.png",
+        "stock": 8,
+        "descripcion": "Las Air Jordan 11 Retro ofrecen un diseño elegante con cuero patentado y una amortiguación inigualable.",
+        "categoria": "nike"
+    },
+    {
+        "id": 25,
+        "nombre": "Air Jordan 12 Retro",
+        "precio": 225.00,
+        "img": "/media/jordan12.webp",
+        "stock": 9,
+        "descripcion": "Las Air Jordan 12 Retro presentan un diseño duradero y un estilo icónico con detalles premium.",
+        "categoria": "nike"
     }
 ]
