@@ -58,5 +58,13 @@ ul a:hover {
 .botonBrands:hover {
     text-decoration: underline;
     background-color: transparent;
-    
+}
+
+.switch-carrito {
+    display: flex;
+    gap: 2rem;
+}
+
+.no-underline {
+    text-decoration: none;
 }

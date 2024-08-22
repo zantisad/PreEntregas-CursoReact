@@ -1,6 +1,10 @@
 import "./CardWidget.css"
+import { useContext, useState } from "react";
+import { CartContext } from "../../Context/CartContext/CartProvider";
 
 const CardWidget = () => {
+    const { cart } = useContext(CartContext);
+
     return(
         <>
             <div className="carrito">

@@ -5,15 +5,12 @@
     gap: 1rem;
     align-items: center;
     text-align: center;
-    width: 80%; /* Ancho fijo, por ejemplo 80% del contenedor */
-    margin: 1rem auto; /* Centra horizontalmente */
-    grid-gap: 10px;
-}
+    width: 66%; /* Ancho fijo, por ejemplo 80% del contenedor */
+    margin: 0 auto; /* Centra horizontalmente */
+    grid-gap: 20px;
+    padding: 2rem;
+    min-height: 91vh;
 
-@media screen and (min-width: 1300px) {
-    .item-list {
-            
-    }
 }
 
 @media screen and (max-width: 1300px) {
@@ -38,4 +35,14 @@
     .item-list {
         grid-template-columns: 1fr;
     }
+}
+
+#light {
+    background-color: #f2f4f6;
+    color: #0d3f67;
+}
+#dark {
+    
+    background-color: #282c34;
+    color: white;
 }

@@ -1,7 +1,7 @@
 .item-detail-container {
-    margin-top: 9rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 91vh;
 }

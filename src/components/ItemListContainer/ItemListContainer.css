@@ -16,3 +16,12 @@
 .amarillo {
     background-color: yellow;
 }
+
+#light {
+    background-color: #f2f4f6;
+    color: #0d3f67;
+}
+#dark {
+    background-color: #282c34;
+    color: white;
+}

@@ -1,8 +1,9 @@
-import React from "react"
+import React from "react";
 import "./Item.css"
 import { Link } from "react-router-dom"
 
 const Item = ({ item }) => {
+
     return (
         <Link className="link" to={`/Item/${item.id}`}>
             <div key={item.id} className="card">
