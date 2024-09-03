@@ -9,8 +9,6 @@ const SwitchMode = ({ checked, onChange }) => {
     const DarkLightMode = () => { 
         return isDarkMode ? 'dark' : 'light'
      }
-
-    console.log(isDarkMode)
   return (
     <label className="switch">
       <input onClick={toggleTheme} type="checkbox" checked={checked} onChange={onChange} />

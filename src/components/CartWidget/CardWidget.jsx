@@ -3,13 +3,13 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext/CartProvider";
 
 const CardWidget = () => {
-    const { cart } = useContext(CartContext);
+    const { cart, getTotalProducts } = useContext(CartContext);
 
     return(
         <>
             <div className="carrito">
             <i className="bi bi-cart carrito-icon">
-                <span className="carrito-numero">0</span>
+                <span className="carrito-numero">{getTotalProducts()}</span>
             </i>    
             </div>        
         </>

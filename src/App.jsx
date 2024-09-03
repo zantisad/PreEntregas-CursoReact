@@ -9,12 +9,38 @@ import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contact";
 import ThemeProvider from "./Context/ThemeContext/ThemeProvider";
 import ThemeContext from "./Context/ThemeContext/ThemeContext.jsx";
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { CartProvider } from "./Context/CartContext/CartProvider.jsx";
 import Cart from "./components/Cart/Cart.jsx";
+import Checkout from "./components/Checkout/Checkout.jsx"
+
+import { db } from "./main"
+import {getDocs, collection, getFirestore, query, where} from "firebase/firestore"
 
 function App() {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+
+  const [ products, setProducts ] = useState([])
+
+  useEffect(()=> {
+    const db = getFirestore();
+
+    const q = query(collection(db,"item"), where("precio", "<", 100));
+
+    getDocs(q).then((querySnapshot) => {
+      if(querySnapshot.size === 0) {
+        console.log("No hay resultados")
+      }
+
+      setProducts(
+        querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+      )
+    })
+  }, [])
+
+
+
+
 
   return (
     <ThemeProvider>
@@ -33,6 +59,7 @@ function App() {
             <Route path="/Contact" element={<Contact />} />
             <Route path="*" element={<Error />} />
             <Route path="/cart" element={<Cart/>} />
+            <Route path="/checkout" element={<Checkout/>} />
           </Routes>
         </BrowserRouter>
       </CartProvider>

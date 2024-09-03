@@ -31,7 +31,7 @@ img {
 .card {
     color: black;
     width: 250px;
-    box-shadow: 0 0 4px rgb(185, 185, 185);
+    box-shadow: 0 0 1rem  rgb(185, 185, 185);
     min-height: 35rem;
     display: flex;
     flex-direction: column;
