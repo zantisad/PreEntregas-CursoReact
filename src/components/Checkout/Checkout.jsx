@@ -91,16 +91,6 @@ const Checkout = () => {
 
   return (
     <div className="form">
-      <div>
-        {cart.map((product) => (
-          <div key={product.product.id}>
-            <p>{product.product.nombre}</p>
-            <p>{product.product.precio}</p>
-            <hr />
-          </div>
-        ))}
-      </div>
-
       <form onSubmit={handleForm}>
         <h2>Ingresa tus datos</h2>
 
@@ -153,6 +143,23 @@ const Checkout = () => {
           <p>Gracias por tu compra! tu numero de orden es: {orderId}</p>
         )}
       </form>
+
+      <div className="products">
+        <h2 className="order-title">Orden de compra</h2>
+        {cart.map((product) => (
+          <div className="product" key={product.product.id}>
+            <img src={product.product.img} alt="" />
+            <p className="p-title">{product.product.nombre}</p>
+            <p className="p-price">
+              ${product.product.precio * product.quantity}
+              <span className="span-quantity">({product.quantity})</span>
+            </p>
+          </div>
+        ))}
+        <div className="total">
+          <p>Total de compra: ${getTotal()}</p>
+        </div>
+      </div>
     </div>
   );
 };
