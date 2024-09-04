@@ -97,3 +97,25 @@ h2{
 .span-quantity {
     font-size: .8rem;
 }
+
+.order-null {
+    margin: 1rem;
+    margin-top: 1rem;
+} 
+
+.back-to-shop {
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: .2rem 1rem;
+    border-radius: .2rem;
+    text-transform: uppercase;
+}
+
+.container-order-null {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}

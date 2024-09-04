@@ -1,5 +1,5 @@
 import "./Checkout.css";
-
+import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { CartContext } from "../../Context/CartContext/CartProvider";
 import {
@@ -90,77 +90,86 @@ const Checkout = () => {
   };
 
   return (
-    <div className="form">
-      <form onSubmit={handleForm}>
-        <h2>Ingresa tus datos</h2>
+    <>
+      {cart.length > 0 ? (
+        <div className="form">
+          <form onSubmit={handleForm}>
+            <h2>Ingresa tus datos</h2>
 
-        <div>
-          <input
-            placeholder="Nombre..."
-            aria-label="Nombre"
-            type="text"
-            onChange={(e) => setNombre(e.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            placeholder="Apellido..."
-            aria-label="Apellido"
-            type="text"
-            onChange={(e) => setApellido(e.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            placeholder="Celular..."
-            aria-label="Celular"
-            type="number"
-            onChange={(e) => setCelular(e.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            placeholder="Email..."
-            aria-label="Email"
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            placeholder="Confirmar Email..."
-            aria-label="Confirmacion de email"
-            type="email"
-            onChange={(e) => setEmailDeConfirmacion(e.target.value)}
-          />
-        </div>
+            <div>
+              <input
+                placeholder="Nombre..."
+                aria-label="Nombre"
+                type="text"
+                onChange={(e) => setNombre(e.target.value)}
+              />
+            </div>
+            <div>
+              <input
+                placeholder="Apellido..."
+                aria-label="Apellido"
+                type="text"
+                onChange={(e) => setApellido(e.target.value)}
+              />
+            </div>
+            <div>
+              <input
+                placeholder="Celular..."
+                aria-label="Celular"
+                type="number"
+                onChange={(e) => setCelular(e.target.value)}
+              />
+            </div>
+            <div>
+              <input
+                placeholder="Email..."
+                aria-label="Email"
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div>
+              <input
+                placeholder="Confirmar Email..."
+                aria-label="Confirmacion de email"
+                type="email"
+                onChange={(e) => setEmailDeConfirmacion(e.target.value)}
+              />
+            </div>
 
-        <button type="submit">Enviar Formulario</button>
+            <button type="submit">Enviar Formulario</button>
 
-        {error && <p>{error}</p>}
+            {error && <p>{error}</p>}
 
-        {orderId && (
-          <p>Gracias por tu compra! tu numero de orden es: {orderId}</p>
-        )}
-      </form>
+            {orderId && (
+              <p>Gracias por tu compra! tu numero de orden es: {orderId}</p>
+            )}
+          </form>
 
-      <div className="products">
-        <h2 className="order-title">Orden de compra</h2>
-        {cart.map((product) => (
-          <div className="product" key={product.product.id}>
-            <img src={product.product.img} alt="" />
-            <p className="p-title">{product.product.nombre}</p>
-            <p className="p-price">
-              ${product.product.precio * product.quantity}
-              <span className="span-quantity">({product.quantity})</span>
-            </p>
+          <div className="products">
+            <h2 className="order-title">Orden de compra</h2>
+            {cart.map((product) => (
+              <div className="product" key={product.product.id}>
+                <img src={product.product.img} alt="" />
+                <p className="p-title">{product.product.nombre}</p>
+                <p className="p-price">
+                  ${product.product.precio * product.quantity}
+                  <span className="span-quantity">({product.quantity})</span>
+                </p>
+              </div>
+            ))}
+            <div className="total">
+              <p>Total de compra: ${getTotal()}</p>
+            </div>
           </div>
-        ))}
-        <div className="total">
-          <p>Total de compra: ${getTotal()}</p>
         </div>
-      </div>
-    </div>
+      ) : (
+        <div className="container-order-null">
+          <p className="order-null">No hay productos ordenados...</p>
+          <Link className="back-to-shop" to={"/"}>Volver a la tienda</Link>
+        </div>
+      )}
+    </>
   );
 };
 
