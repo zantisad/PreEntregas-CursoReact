@@ -22,7 +22,7 @@ const ItemCount = ({ stock, onAdd }) => {
         <button className="incrementar" onClick={incrementar}> + </button>
         <button className="decrementar" onClick={decrementar}> - </button>
          <button
-          onClick={() => onAdd(cantidad)}
+          onClick={stock ? () => onAdd(cantidad) : console.log("No hay mas stock")}
           className="product-agregar-carrito"><i className="bi bi-cart-plus"></i> Agregar al carrito
         </button>
       </div>

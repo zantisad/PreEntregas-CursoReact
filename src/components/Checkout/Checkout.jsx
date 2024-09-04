@@ -1,3 +1,5 @@
+import "./Checkout.css";
+
 import { useState, useContext } from "react";
 import { CartContext } from "../../Context/CartContext/CartProvider";
 import {
@@ -89,8 +91,6 @@ const Checkout = () => {
 
   return (
     <div className="form">
-      <h2>Ingresa tus datos</h2>
-
       <div>
         {cart.map((product) => (
           <div key={product.product.id}>
@@ -102,25 +102,44 @@ const Checkout = () => {
       </div>
 
       <form onSubmit={handleForm}>
+        <h2>Ingresa tus datos</h2>
+
         <div>
-          <label htmlFor="">Nombre</label>
-          <input type="text" onChange={(e) => setNombre(e.target.value)} />
-        </div>
-        <div>
-          <label htmlFor="">Apellido</label>
-          <input type="text" onChange={(e) => setApellido(e.target.value)} />
-        </div>
-        <div>
-          <label htmlFor="">'Celular'</label>
-          <input type="number" onChange={(e) => setCelular(e.target.value)} />
-        </div>
-        <div>
-          <label htmlFor="">Email</label>
-          <input type="email" onChange={(e) => setEmail(e.target.value)} />
-        </div>
-        <div>
-          <label htmlFor="">Email de confirmacion</label>
           <input
+            placeholder="Nombre..."
+            aria-label="Nombre"
+            type="text"
+            onChange={(e) => setNombre(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            placeholder="Apellido..."
+            aria-label="Apellido"
+            type="text"
+            onChange={(e) => setApellido(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            placeholder="Celular..."
+            aria-label="Celular"
+            type="number"
+            onChange={(e) => setCelular(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            placeholder="Email..."
+            aria-label="Email"
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            placeholder="Confirmar Email..."
+            aria-label="Confirmacion de email"
             type="email"
             onChange={(e) => setEmailDeConfirmacion(e.target.value)}
           />

@@ -38,10 +38,6 @@ function App() {
     })
   }, [])
 
-
-
-
-
   return (
     <ThemeProvider>
       <CartProvider>

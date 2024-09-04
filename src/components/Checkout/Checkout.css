@@ -1,0 +1,48 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+
+    input {
+        border: none;
+        border-bottom: 1px solid gray;
+        padding: .2rem;
+        padding-bottom: 0;
+        margin: .5rem;
+
+    }
+
+    input::placeholder {
+        color: rgba(86, 86, 86, 0.483);
+        font-size: 1rem;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    /* Quitar el color azul del autocompletado del navegador */
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset; 
+    }
+
+    button {
+        margin: 2rem;
+        border: 1px solid black;
+        background-color: transparent;
+        padding: .1rem .6rem;
+        border-radius: .5rem;
+
+        &&:hover {
+            background-color: rgb(240, 240, 240);
+        }
+    }
+
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+}
