@@ -10,7 +10,6 @@ import CardWidget from "../CartWidget/CardWidget";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
-import SwitchMode from "../SwitchMode/SwitchMode";
 
 const Navbar = () => {
   const [dropDownOpen, setDropDownOpen] = useState(false);
@@ -88,7 +87,6 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="switch-carrito">
-        <SwitchMode />
         <Link to="/cart" className="no-underline">
           <CardWidget />
         </Link>

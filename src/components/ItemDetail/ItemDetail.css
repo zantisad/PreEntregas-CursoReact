@@ -26,6 +26,7 @@
 .product-nombre {
     font-size: 3rem;
     text-transform: uppercase;
+    text-align: left;
 }
 
 .product-precio {

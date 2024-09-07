@@ -7,18 +7,15 @@ import Error from "./components/Error/Error";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contact";
-import ThemeProvider from "./Context/ThemeContext/ThemeProvider";
-import ThemeContext from "./Context/ThemeContext/ThemeContext.jsx";
 import React, { useContext, useState, useEffect } from "react";
 import { CartProvider } from "./Context/CartContext/CartProvider.jsx";
 import Cart from "./components/Cart/Cart.jsx";
 import Checkout from "./components/Checkout/Checkout.jsx"
-
+import { Toaster, toast } from 'sonner'
 import { db } from "./main"
 import {getDocs, collection, getFirestore, query, where} from "firebase/firestore"
 
 function App() {
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
   const [ products, setProducts ] = useState([])
 
@@ -39,10 +36,10 @@ function App() {
   }, [])
 
   return (
-    <ThemeProvider>
       <CartProvider>
         <BrowserRouter>
           <Navbar />
+          <Toaster />
 
           <Routes>
             <Route path="/" element={<Home />} />
@@ -59,7 +56,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </CartProvider>
-    </ThemeProvider>
   );
 }
 

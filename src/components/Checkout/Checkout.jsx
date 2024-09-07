@@ -2,6 +2,7 @@ import "./Checkout.css";
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { CartContext } from "../../Context/CartContext/CartProvider";
+import { Toaster, toast } from "sonner";
 import {
   collection,
   addDoc,
@@ -12,7 +13,7 @@ import {
 } from "firebase/firestore";
 
 const Checkout = () => {
-  const { cart, getTotal, getTotalProducts, clearCart } =
+  const { cart, getTotal, clearCart } =
     useContext(CartContext);
 
   const [nombre, setNombre] = useState("");
@@ -35,6 +36,14 @@ const Checkout = () => {
       setError("Los emails no coinciden");
       return;
     }
+
+    toast.promise(promise, {
+      loading: "Cargando...",
+      success: () => {
+        return `Gracias por tu compra!`;
+      },
+      error: "Error",
+    });
 
     const db = getFirestore();
 
@@ -71,7 +80,6 @@ const Checkout = () => {
         });
       })
     )
-
       .then(() => {
         addDoc(collection(db, "orders"), order)
           .then((docRef) => {
@@ -89,8 +97,15 @@ const Checkout = () => {
       });
   };
 
+  const promise = () =>
+    new Promise((resolve) =>
+      setTimeout(() => resolve({ name: "Sonner" }), 2000)
+    );
+
+
   return (
     <>
+      <Toaster />
       {cart.length > 0 ? (
         <div className="form">
           <form onSubmit={handleForm}>
@@ -166,7 +181,9 @@ const Checkout = () => {
       ) : (
         <div className="container-order-null">
           <p className="order-null">No hay productos ordenados...</p>
-          <Link className="back-to-shop" to={"/"}>Volver a la tienda</Link>
+          <Link className="back-to-shop" to={"/"}>
+            Volver a la tienda
+          </Link>
         </div>
       )}
     </>
