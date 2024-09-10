@@ -6,12 +6,14 @@
     
     width: 18rem;
     min-height: 18rem;
+
+    img {
+        max-width: 14.5rem;
+    }
 }
 
 
-img {
-    min-width: 12rem;
-}
+
 
 
 .item-nombre {
