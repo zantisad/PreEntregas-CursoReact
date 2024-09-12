@@ -11,6 +11,6 @@ const Home = () => {
             <ItemListContainer />
         </>
     )
-}
+} 
 
 export default Home

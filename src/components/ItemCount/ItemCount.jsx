@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import "./ItemCount.css";
 
@@ -21,7 +20,7 @@ const ItemCount = ({ stock, onAdd }) => {
         <p className="product-contador">{cantidad}</p>
         <button className="incrementar" onClick={incrementar}> + </button>
         <button className="decrementar" onClick={decrementar}> - </button>
-         <button
+        <button
           onClick={stock ? () => onAdd(cantidad) : console.log("No hay mas stock")}
           className="product-agregar-carrito"><i className="bi bi-cart-plus"></i> Agregar al carrito
         </button>

@@ -13,7 +13,6 @@ Este es un proyecto de ecommerce para sneakers construido con **React**, que inc
 - **Context API**: Manejo del estado global del carrito de compras mediante `CartContext`.
 - **Firebase Firestore**: Los productos se cargan dinámicamente desde Firestore, y se filtran según su precio.
 - **Notificaciones**: Utiliza la librería `Sonner` para mostrar notificaciones de acciones como agregar productos al carrito.
-- **Diseño Responsivo**: Adaptado para diferentes dispositivos.
 
 ## Estructura del Proyecto
 
