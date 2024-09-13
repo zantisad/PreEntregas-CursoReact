@@ -17,16 +17,14 @@
 
 
 .item-nombre {
-    font-size: 2rem;
-    padding: 1rem;
+    font-size: 1.8rem;
     text-align: center;
     
 }
 
 .item-precio {
-
-    font-size: 2rem;
-    margin-top: -2rem;
+    font-size: 1.7rem;
+    margin-top: .5rem;
     
 }
 

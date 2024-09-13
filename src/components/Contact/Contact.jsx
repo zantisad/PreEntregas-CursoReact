@@ -111,12 +111,12 @@ const Contact = () => {
           }}
         />
         {error && (
-          <p style={{ color: "red", fontSize: "14px", marginTop: "10px" }}>
+          <p className="message-error">
             {error}
           </p>
         )}
         {sended && (
-          <p style={{ color: "green", fontSize: "14px", marginTop: "10px" }}>
+          <p className="message-send">
             {sended}
           </p>
         )}

@@ -14,7 +14,9 @@ const Portada = () => {
         />
       </div>
       <NavLink>
-        <span className="portada-texto">VER PRODUCTO</span>
+        <Link to={`item/lGScqZca5bJ6KbJegF8Z`}>
+          <span className="portada-texto">VER PRODUCTO</span>
+        </Link>
       </NavLink>
     </div>
   );
