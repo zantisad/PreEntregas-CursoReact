@@ -56,7 +56,7 @@
 
 .item-right>a:hover {
     background-color: white;/* Opcional: añade subrayado en hover si quieres */
-    box-shadow: 0 0 5.4px 1.2px yellow;
+    box-shadow: 0 0 5px 1px yellow;
   }
 
 @media screen and (max-width: 700px) {

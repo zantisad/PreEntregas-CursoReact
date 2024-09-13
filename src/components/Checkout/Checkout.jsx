@@ -34,6 +34,18 @@ const Checkout = () => {
   const handleForm = (e) => {
     e.preventDefault();
 
+    if (!lettersOnlyRegex.test(nombre) && !lettersOnlyRegex.test(apellido) ) {
+      setError('Los campos "Nombre" y "Apellido" solo pueden contener letras.');
+      nombreInput.classList.add("red");
+      apellidoInput.classList.add("red");
+      setTimeout(() => {
+        nombreInput.classList.remove("red")
+        apellidoInput.classList.remove("red")
+        ;
+      }, 2000);
+      return;
+    }
+
     if (!lettersOnlyRegex.test(nombre)) {
       setError('El campo "Nombre" solo puede contener letras.');
       nombreInput.classList.add("red");
@@ -54,11 +66,11 @@ const Checkout = () => {
 
     if (!nombre || !apellido || !celular || !email || !emailDeConfirmacion) {
 
-      nombre ? nombre : nombreInput.classList.add("red") 
-      apellido ? apellido : apellidoInput.classList.add("red") 
-      celular ? celular : celularInput.classList.add("red") 
-      email ? email : emailInput.classList.add("red") 
-      emailDeConfirmacion ? emailDeConfirmacion : confEmailInput.classList.add("red")
+      nombre ? nombreInput.classList.remove("red") : nombreInput.classList.add("red") 
+      apellido ? apellidoInput.classList.remove("red") : apellidoInput.classList.add("red") 
+      celular ? celularInput.classList.remove("red") : celularInput.classList.add("red") 
+      email ? emailInput.classList.remove("red") : emailInput.classList.add("red") 
+      emailDeConfirmacion ? confEmailInput.classList.remove("red") : confEmailInput.classList.add("red")
 
       setError("Debes completar todos los campos");
       return;
