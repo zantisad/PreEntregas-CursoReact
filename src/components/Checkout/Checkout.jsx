@@ -13,8 +13,13 @@ import {
 } from "firebase/firestore";
 
 const Checkout = () => {
-  const { cart, getTotal, clearCart } =
-    useContext(CartContext);
+  const { cart, getTotal, clearCart } = useContext(CartContext);
+
+  const apellidoInput = document.querySelector(".apellido");
+  const nombreInput = document.querySelector(".nombre");
+  const emailInput = document.querySelector(".email");
+  const confEmailInput = document.querySelector(".confEmail");
+  const celularInput = document.querySelector(".celular");
 
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
@@ -24,16 +29,44 @@ const Checkout = () => {
   const [error, setError] = useState("");
   const [orderId, setOrderId] = useState("");
 
+  const lettersOnlyRegex = /^[A-Za-z\s]*$/;
+
   const handleForm = (e) => {
     e.preventDefault();
 
+    if (!lettersOnlyRegex.test(nombre)) {
+      setError('El campo "Nombre" solo puede contener letras.');
+      nombreInput.classList.add("red");
+      setTimeout(() => {
+        nombreInput.classList.remove("red");
+      }, 2000);
+      return;
+    }
+
+    if (!lettersOnlyRegex.test(apellido)) {
+      setError('El campo "Apellido" solo puede contener letras.');
+      apellidoInput.classList.add("red");
+      setTimeout(() => {
+        apellidoInput.classList.remove("red");
+      }, 2000);
+      return;
+    }
+
     if (!nombre || !apellido || !celular || !email || !emailDeConfirmacion) {
+
+      nombre ? nombre : nombreInput.classList.add("red") 
+      apellido ? apellido : apellidoInput.classList.add("red") 
+      celular ? celular : celularInput.classList.add("red") 
+      email ? email : emailInput.classList.add("red") 
+      emailDeConfirmacion ? emailDeConfirmacion : confEmailInput.classList.add("red")
+
       setError("Debes completar todos los campos");
       return;
     }
 
     if (email !== emailDeConfirmacion) {
       setError("Los emails no coinciden");
+
       return;
     }
 
@@ -60,14 +93,6 @@ const Checkout = () => {
       celular,
       email,
     };
-
-    // Validar que no haya valores undefined en el objeto order
-    if (Object.values(order).some((value) => value === undefined)) {
-      setError(
-        "Hay un problema con los datos ingresados. Revisa e intenta nuevamente."
-      );
-      return;
-    }
 
     Promise.all(
       order.items.map(async (productOrder) => {
@@ -102,7 +127,6 @@ const Checkout = () => {
       setTimeout(() => resolve({ name: "Sonner" }), 2000)
     );
 
-
   return (
     <>
       <Toaster />
@@ -113,6 +137,7 @@ const Checkout = () => {
 
             <div>
               <input
+                className="nombre"
                 placeholder="Nombre..."
                 aria-label="Nombre"
                 type="text"
@@ -121,6 +146,7 @@ const Checkout = () => {
             </div>
             <div>
               <input
+                className="apellido"
                 placeholder="Apellido..."
                 aria-label="Apellido"
                 type="text"
@@ -129,6 +155,7 @@ const Checkout = () => {
             </div>
             <div>
               <input
+              className="celular"
                 placeholder="Celular..."
                 aria-label="Celular"
                 type="number"
@@ -137,6 +164,7 @@ const Checkout = () => {
             </div>
             <div>
               <input
+              className="email"
                 placeholder="Email..."
                 aria-label="Email"
                 type="email"
@@ -145,6 +173,7 @@ const Checkout = () => {
             </div>
             <div>
               <input
+              className="confEmail"
                 placeholder="Confirmar Email..."
                 aria-label="Confirmacion de email"
                 type="email"
@@ -154,7 +183,7 @@ const Checkout = () => {
 
             <button type="submit">Enviar Formulario</button>
 
-            {error && <p>{error}</p>}
+            {error && <p className="message-error">{error}</p>}
 
             {orderId && (
               <p>Gracias por tu compra! tu numero de orden es: {orderId}</p>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./Contact.css"
+import "./Contact.css";
 
 const Contact = () => {
   const [message, setMessage] = useState("");
@@ -51,7 +51,7 @@ const Contact = () => {
       return;
     }
     if (email.trim() != ConfEmail.trim()) {
-      setError("Los emails no coinciden")
+      setError("Los emails no coinciden");
       return;
     }
 
@@ -110,20 +110,9 @@ const Contact = () => {
             fontSize: "16px",
           }}
         />
-        {error && (
-          <p className="message-error">
-            {error}
-          </p>
-        )}
-        {sended && (
-          <p className="message-send">
-            {sended}
-          </p>
-        )}
-        <button
-          type="submit"
-          className="button-send"
-        >
+        {error && <p className="message-error">{error}</p>}
+        {sended && <p className="message-send">{sended}</p>}
+        <button type="submit" className="button-send">
           Enviar
         </button>
       </form>

@@ -119,3 +119,16 @@ h2{
     align-items: center;
     margin: 1rem;
 }
+
+.apellido, .nombre {
+    transition: border-bottom 1s ease; /* Duración de la transición */
+}
+
+.red {
+    border-bottom : 1px solid red;
+}
+
+.message-error {
+    color: red;
+}
+
